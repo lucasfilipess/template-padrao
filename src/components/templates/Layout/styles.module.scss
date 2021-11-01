@@ -1,0 +1,30 @@
+@import "../../../styles/variables";
+
+.layout {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  width: 100%;
+}
+
+.container {
+  padding: 80px 100px 0 100px;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  @media (max-width: 768px) {
+    padding: 80px 48px 0 48px;
+  }
+  @media (max-width: 576px) {
+    padding: 80px 24px 0 24px;
+  }
+}
+
+.content {
+  width: 100%;
+  height: calc(100% - 29px);
+}
+
+.contentDark {
+  background-color: $body-bg-dark;
+}

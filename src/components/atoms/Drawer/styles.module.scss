@@ -1,0 +1,19 @@
+@import "../../../styles/variables";
+
+.toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  padding: 0;
+  color: $drawer;
+  > svg {
+    height: 24px;
+    width: 24px;
+  }
+}
+
+.toggleDark {
+  color: $drawer-dark;
+}

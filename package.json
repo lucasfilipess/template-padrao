@@ -1,0 +1,83 @@
+{
+  "name": "template-rumo",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "lint": "eslint src"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "dependencies": {
+    "@loadable/component": "^5.15.0",
+    "@material-ui/core": "^4.12.3",
+    "@mui/x-data-grid": "^4.0.1",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "axios": "^0.22.0",
+    "bootstrap": "5.1.1",
+    "classnames": "^2.3.1",
+    "formik": "^2.2.9",
+    "react": "^17.0.2",
+    "react-autocomplete": "^1.8.1",
+    "react-bootstrap": "^2.0.0-rc.0",
+    "react-bootstrap-typeahead": "^6.0.0-alpha.3",
+    "react-dom": "^17.0.2",
+    "react-icons": "^4.3.1",
+    "react-router-dom": "^5.3.0",
+    "react-scripts": "4.0.3",
+    "react-text-mask": "^5.4.3",
+    "react-toastify": "^8.0.3",
+    "react-vis": "^1.11.7",
+    "text-mask-addons": "^3.8.0",
+    "typescript": "^4.0.3",
+    "web-vitals": "^0.2.4",
+    "workbox-background-sync": "^5.1.3",
+    "workbox-broadcast-update": "^5.1.3",
+    "workbox-cacheable-response": "^5.1.3",
+    "workbox-core": "^5.1.3",
+    "workbox-expiration": "^5.1.3",
+    "workbox-google-analytics": "^5.1.3",
+    "workbox-navigation-preload": "^5.1.3",
+    "workbox-precaching": "^5.1.3",
+    "workbox-range-requests": "^5.1.3",
+    "workbox-routing": "^5.1.3",
+    "workbox-strategies": "^5.1.3",
+    "workbox-streams": "^5.1.3",
+    "yup": "^0.32.11"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.15",
+    "@types/loadable__component": "^5.13.4",
+    "@types/node": "^12.0.0",
+    "@types/react": "^16.9.53",
+    "@types/react-autocomplete": "^1.8.6",
+    "@types/react-dom": "^16.9.8",
+    "@types/react-router-dom": "^5.3.0",
+    "@types/react-text-mask": "^5.4.9",
+    "@types/react-vis": "^1.11.7",
+    "@typescript-eslint/eslint-plugin": "^4.32.0",
+    "@typescript-eslint/parser": "^4.32.0",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.26.1",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "prettier": "^2.4.1",
+    "sass": "^1.43.4"
+  }
+}

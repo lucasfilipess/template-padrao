@@ -1,0 +1,63 @@
+@import "../../../styles/variables";
+
+.nav {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  gap: 26px;
+}
+
+.nav .search {
+  width: 160px;
+  height: 29px;
+  background: $search-bg;
+  border-radius: 2px;
+  border: none;
+  font-size: 12px;
+  line-height: 12px;
+  @media (max-width: $breakpoint-md) {
+    display: none;
+  }
+}
+
+.search::placeholder {
+  font-size: 12px;
+  line-height: 12px;
+  color: $search-placeholder;
+}
+
+.iconButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  padding: 0;
+  color: $icon-button;
+  > svg {
+    height: 24px;
+    width: 24px;
+  }
+  @media (max-width: $breakpoint-md) {
+    display: none;
+  }
+}
+
+.switch {
+  @media (max-width: $breakpoint-md) {
+    display: none;
+  }
+}
+
+
+.nav .searchDark {
+  background: $search-bg-dark;
+}
+
+.searchDark::placeholder {
+  color: $search-placeholder-dark;
+}
+
+.iconButtonDark {
+  color: $icon-button-dark;
+}

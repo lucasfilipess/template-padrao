@@ -1,0 +1,15 @@
+@import "../../../styles/variables";
+
+.switch {
+  input:checked {
+    border-color: $primary !important;
+    background-color: $primary !important;
+  }
+}
+
+.switchDark {
+  input:checked {
+    border-color: $primary-dark !important;
+    background-color: $primary-dark !important;
+  }
+}

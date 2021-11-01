@@ -1,0 +1,52 @@
+@import "../../../styles/variables";
+
+.container {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  width: 100%;
+  div {
+    width: 100%;
+  }
+}
+
+.input {
+  background-color: transparent !important;
+}
+
+.fixAdornment {
+  padding-right: 50px !important;
+}
+
+.adornment {
+  position: absolute;
+  z-index: 2;
+  background: transparent;
+  border: none;
+  position: absolute;
+  margin-right: 30px;
+  margin-top: 16px;
+}
+
+.hide {
+  visibility: hidden;
+}
+
+.label {
+  label {
+    white-space: nowrap;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    max-width: 100%;
+  }
+}
+
+.inputDark {
+  color: $text-dark !important;
+}
+
+.labelDark {
+ label{
+  color: $text-dark !important;
+ }
+}

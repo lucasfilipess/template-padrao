@@ -1,0 +1,21 @@
+@import "../../../styles/variables";
+
+.formCheck {
+  input:checked {
+    border-color: $primary !important;
+    background-color: $primary !important;
+  }
+  label {
+    color: $text;
+  }
+}
+
+.formCheckDark {
+  input:checked {
+    border-color: $primary-dark !important;
+    background-color: $primary-dark !important;
+  }
+  label {
+    color: $text-dark;
+  }
+}

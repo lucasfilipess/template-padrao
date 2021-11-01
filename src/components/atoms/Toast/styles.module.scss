@@ -1,0 +1,48 @@
+.styledToast {
+  min-width: 428px;
+  > div {
+    background: white;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    > div {
+      > div:first-child {
+        display: none;
+      }
+    }
+  }
+}
+
+.container {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.iconWrapper {
+  margin-right: 14px;
+  min-width: 28px;
+  > svg {
+    height: 28px;
+    width: 28px;
+  }
+}
+
+.success {
+  color: #7dad59;
+}
+.warning {
+  color: #dca048;
+}
+.error {
+  color: #de3c3f;
+}
+
+.message {
+  p {
+    font-weight: bold;
+    line-height: 26px;
+    color: #6a6a6a;
+    margin: 0;
+  }
+}
