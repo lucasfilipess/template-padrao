@@ -1,0 +1,80 @@
+:root {
+  --primary: #2a5b92;
+  --primary-hover: #06305f;
+  --primary-focus: rgb(42 91 146 / 50%);
+  --secondary: #5e99f5;
+  --secondary-hover: #3276e0;
+  --secondary-focus: rgb(94 153 245 / 50%);
+
+  --layout-bg: #ffffff;
+  --body-bg: #e5e5e5;
+  --search-bg: #f8f8f8f8;
+  --auth-bg: #2a5b92;
+  --auth-mobile-bg: #f2f4f6;
+
+  --text: #313131;
+  --sub-text: #6a6a6a;
+  --input: #6a6a6a;
+
+  --card: #ffffff;
+  --card-shadow: rgba(0, 0, 0, 0.1);
+
+  --drawer: #2c3e50;
+
+  --menu-btn-bg-active: #2a5b92;
+  --menu-btn-text: #bdbdbd;
+  --menu-btn-text-active: #f3f6fb;
+
+  --sub-menu-btn-bg-active: #2a5b92;
+  --sub-menu-btn-text: #bdbdbd;
+  --sub-menu-btn-text-active: #f3f6fb;
+  --sub-menu-list-text: #607790;
+  --sub-menu-list-bg: #deebff;
+  --sub-menu-list-bg-active: #5c7bab;
+  --sub-menu-list-text-active: #deebff;
+
+  --search-placeholder: #a8a8a8;
+  --icon-button: #8c8c8c;
+  --fill: rgba(94, 153, 245, 0.3);
+}
+
+[data-theme="dark"] {
+  --primary: #5c7cec;
+  --primary-hover: #0b2ca0;
+  --primary-focus: rgb(92 124 236 / 50%);
+  --secondary: #5e99f5;
+  --secondary-hover: #134695;
+  --secondary-focus: rgb(19 70 149 / 50%);
+
+  --layout-bg: #1a1a24;
+  --body-bg: #272934;
+  --search-bg: #272934;
+  --auth-bg: #272934;
+  --auth-mobile-bg: #272934;
+
+  --text: #fafbfb;
+  --sub-text: #93a1ae;
+  --input: #aab8c5;
+
+  --card: #1a1a24;
+  --card-shadow: rgba(26, 26, 36, 0.5);
+
+  --drawer: #7e8c9d;
+
+  --menu-btn-text: #7e8c9d;
+  --menu-btn-text-active: #5c7cec;
+  --menu-btn-bg-active: #040936;
+
+  --sub-menu-btn-bg-active: #040936;
+  --sub-menu-btn-bg: #1a1a24;
+  --sub-menu-btn-bg-active: #040936;
+  --sub-menu-btn-text-active: #5c7cec;
+  --sub-menu-list-text: #7e8c9d;
+  --sub-menu-list-bg: #232332;
+  --sub-menu-list-bg-active: #3a3b46;
+  --sub-menu-list-text-active: #deebff;
+
+  --search-placeholder: #aab8c5;
+  --icon-button: #aab8c5;
+  --fill: rgba(94, 153, 245, 0.3);
+}

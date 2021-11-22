@@ -1,31 +1,18 @@
 import React from 'react'
-import classNames from 'classnames'
-import { Navbar, Sidebar, Topbar } from 'components/organisms'
+import { Navbar, Sidebar } from 'components/organisms'
 import { Breadcrumb } from 'components/atoms'
-import { useLayout, useTheme } from 'hooks'
-import styles from './styles.module.scss'
+import { useLayout } from 'hooks'
+import styles from './styles.module.css'
 
 const Layout: React.FC = ({ children }) => {
   const { isOpen } = useLayout()
-  const { isDark } = useTheme()
   return (
-    <div className={styles.layout}>
+    <div className={styles.layoutContainer}>
       <Navbar />
-      <Topbar isOpen={isOpen} />
       <Sidebar isOpen={isOpen} />
-      <div
-        className={classNames(styles.container, {
-          [styles.contentDark]: isDark
-        })}
-      >
+      <div className={styles.contentContainer}>
         <Breadcrumb />
-        <main
-          className={classNames(styles.content, {
-            [styles.contentDark]: isDark
-          })}
-        >
-          {children}
-        </main>
+        <main className={styles.content}>{children}</main>
       </div>
     </div>
   )

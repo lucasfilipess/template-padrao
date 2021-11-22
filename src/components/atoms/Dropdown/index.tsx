@@ -7,11 +7,11 @@ import {
 export type MenusProps = {
   label: ReactNode
   onClick?: (arg?: unknown) => unknown
-}
+}[]
 
 export type DropdownProps = BootstrapDropdownProps & {
   children?: ReactNode
-  menus: MenusProps[]
+  menus: MenusProps
 }
 
 export const Dropdown: React.FC<DropdownProps> = ({
@@ -24,13 +24,13 @@ export const Dropdown: React.FC<DropdownProps> = ({
     <BootstrapDropdown {...rest}>
       <BootstrapDropdown.Toggle as={as}>{children}</BootstrapDropdown.Toggle>
       <BootstrapDropdown.Menu>
-        {menus.map((menu, index) => (
+        {menus.map(({ label, onClick }, index) => (
           <BootstrapDropdown.Item
-            key={index}
+            key={`dropdown-${index}`}
             as="button"
-            onClick={menu.onClick}
+            onClick={onClick}
           >
-            {menu.label}
+            {label}
           </BootstrapDropdown.Item>
         ))}
       </BootstrapDropdown.Menu>

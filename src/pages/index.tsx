@@ -28,14 +28,6 @@ export const Login = loadable(() => import('./Login'), {
   fallback: <Spinner />
 })
 
-export const Components = loadable(() => import('./Components'), {
-  fallback: <Spinner />
-})
-
-export const General = loadable(() => import('./General'), {
-  fallback: <Spinner />
-})
-
 export const Forms = loadable(() => import('./Forms'), {
   fallback: <Spinner />
 })
@@ -45,5 +37,45 @@ export const Tables = loadable(() => import('./Tables'), {
 })
 
 export const Register = loadable(() => import('./Register'), {
+  fallback: <Spinner />
+})
+
+export const Alerts = loadable(() => import('./Alerts'), {
+  fallback: <Spinner />
+})
+
+export const CheckboxRadio = loadable(() => import('./CheckboxRadio'), {
+  fallback: <Spinner />
+})
+
+export const Buttons = loadable(() => import('./Buttons'), {
+  fallback: <Spinner />
+})
+
+export const Cards = loadable(() => import('./Cards'), {
+  fallback: <Spinner />
+})
+
+export const Dropdowns = loadable(() => import('./Dropdowns'), {
+  fallback: <Spinner />
+})
+
+export const Lightbox = loadable(() => import('./Lightbox'), {
+  fallback: <Spinner />
+})
+
+export const Modal = loadable(() => import('./Modal'), {
+  fallback: <Spinner />
+})
+
+export const TabsAccordions = loadable(() => import('./TabsAccordions'), {
+  fallback: <Spinner />
+})
+
+export const Icons = loadable(() => import('./Icons'), {
+  fallback: <Spinner />
+})
+
+export const Axios = loadable(() => import('./Axios'), {
   fallback: <Spinner />
 })

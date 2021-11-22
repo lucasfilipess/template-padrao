@@ -1,0 +1,60 @@
+.button {
+  background-color: var(--primary) !important;
+  border-color: var(--primary) !important;
+  transition: all 0.3s;
+}
+
+.button hover {
+  filter: brightness(0.9);
+}
+
+.secondary {
+  background-color: var(--secondary) !important;
+  border-color: var(--secondary) !important;
+  color: white !important;
+  transition: all 0.3s;
+}
+
+.secondary hover {
+  filter: brightness(0.9);
+  color: white;
+}
+
+.outline {
+  background-color: transparent !important;
+  color: var(--primary) !important;
+  transition: all 0.3s;
+}
+
+.outline:hover {
+  background-color: var(--primary) !important;
+  color: white !important;
+}
+
+.secondaryOutline {
+  background-color: transparent !important;
+  border-color: var(--secondary) !important;
+  color: var(--secondary) !important;
+  transition: all 0.3s;
+}
+
+.secondaryOutline:hover {
+  background-color: var(--secondary) !important;
+  color: white !important;
+}
+
+.link {
+  background-color: transparent !important;
+  color: var(--primary) !important;
+  border: none !important;
+  transition: all 0.3s;
+}
+
+.link:hover {
+  filter: brightness(0.9);
+}
+
+.link:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}

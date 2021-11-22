@@ -1,0 +1,4 @@
+.modal > div > div {
+  color: var(--text);
+  background-color: var(--card);
+}

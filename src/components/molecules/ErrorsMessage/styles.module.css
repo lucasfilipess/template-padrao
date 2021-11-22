@@ -1,0 +1,30 @@
+.messageContainer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 27.063rem;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 2rem;
+  line-height: 2.25rem;
+  color: var(--text);
+  margin-bottom: 1.5rem;
+}
+
+.description {
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 1.875rem;
+  color: var(--sub-text);
+  margin-bottom: 3rem;
+}
+
+@media (max-width: 768px) {
+  .messageContainer {
+    align-items: flex-start;
+    max-width: 100%;
+    width: 100%;
+  }
+}

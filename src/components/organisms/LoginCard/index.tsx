@@ -1,12 +1,10 @@
 import React from 'react'
 import { Formik } from 'formik'
 import { Link } from 'react-router-dom'
-import classNames from 'classnames'
-import { useTheme } from 'hooks'
 import { Form, Card } from 'react-bootstrap'
 import { Button, Checkbox, Input } from 'components/atoms'
 import { LoginCredentials } from 'context'
-import styles from './styles.module.scss'
+import styles from './styles.module.css'
 
 export type LoginCardProps = {
   initialValues: LoginCredentials
@@ -19,18 +17,11 @@ const LoginCard: React.FC<LoginCardProps> = ({
   onSubmit,
   validationSchema
 }) => {
-  const { isDark } = useTheme()
   return (
-    <Card className={classNames(styles.card, { [styles.cardDark]: isDark })}>
+    <Card className={styles.cardContainer}>
       <Card.Body className={styles.cardBody}>
-        <Card.Title
-          className={classNames(styles.title, { [styles.textDark]: isDark })}
-        >
-          Login
-        </Card.Title>
-        <Card.Subtitle
-          className={classNames(styles.subtitle, { [styles.textDark]: isDark })}
-        >
+        <Card.Title className={styles.title}>Login</Card.Title>
+        <Card.Subtitle className={styles.subtitle}>
           Faça login na sua conta
         </Card.Subtitle>
         <Formik
@@ -64,7 +55,7 @@ const LoginCard: React.FC<LoginCardProps> = ({
                 value={values.password}
                 required
               />
-              <div className={styles.options}>
+              <div className={styles.optionsContainer}>
                 <Link to="/">Esqueci a senha</Link>
                 <Checkbox
                   feedback={errors.rememberMe}
@@ -75,11 +66,7 @@ const LoginCard: React.FC<LoginCardProps> = ({
                   required
                 />
               </div>
-              <div
-                className={classNames(styles.buttons, {
-                  [styles.textDark]: isDark
-                })}
-              >
+              <div className={styles.buttonsContainer}>
                 <Button type="submit">Continuar</Button>
                 <p>
                   Não possui conta? <Link to="/cadastro">Cadastre-se</Link>

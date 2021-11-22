@@ -1,15 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { Breadcrumb as BootstrapBreadcrumb } from 'react-bootstrap'
 import { Link, useLocation } from 'react-router-dom'
-import classNames from 'classnames'
 import { MenusProps } from 'config'
 import { MENUS } from 'config'
-import { useTheme } from 'hooks'
-import styles from './styles.module.scss'
+import styles from './styles.module.css'
 
 const Breadcrumb: React.FC = () => {
   const { pathname } = useLocation()
-  const { isDark } = useTheme()
   const [routes, setRoutes] = useState<MenusProps | undefined>()
 
   useEffect(() => {
@@ -38,12 +35,12 @@ const Breadcrumb: React.FC = () => {
   return (
     <BootstrapBreadcrumb className={styles.breadcrumbContainer}>
       <BootstrapBreadcrumb.Item
-        className={classNames(styles.link, { [styles.linkDark]: isDark })}
+        className={styles.link}
         linkAs={() => customLink('Início', '/')}
       />
       {routes && (
         <BootstrapBreadcrumb.Item
-          className={classNames(styles.link, { [styles.linkDark]: isDark })}
+          className={styles.link}
           linkAs={() => customLink(routes?.title, routes?.path)}
         />
       )}

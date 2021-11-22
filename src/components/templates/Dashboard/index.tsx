@@ -7,9 +7,9 @@ import {
   SpendingCard,
   SpendingCardProps
 } from 'components/molecules'
-import { Button, Title, Subtitle } from 'components/atoms'
+import { Button, Subtitle } from 'components/atoms'
 import { BsArrowRight } from 'react-icons/bs'
-import styles from './styles.module.scss'
+import styles from './styles.module.css'
 
 export type DashboardProps = {
   statusCards: StatusCardProps[]
@@ -23,8 +23,7 @@ const Dashboard: React.FC<DashboardProps> = ({
   spendingCards
 }) => {
   return (
-    <div className={styles.container}>
-      <Title>Dashboard</Title>
+    <div className={styles.dashboardContainer}>
       <div className={styles.statusCards}>
         {statusCards.map(({ title, subtitle, icon, iconBackground }, index) => (
           <StatusCard
@@ -55,7 +54,7 @@ const Dashboard: React.FC<DashboardProps> = ({
           )
         )}
       </div>
-      <div className={styles.wrapper}>
+      <div className={styles.subtitleContainer}>
         <Subtitle>Gastos por tipo</Subtitle>
         <Button variant="link">
           ver mais <BsArrowRight />

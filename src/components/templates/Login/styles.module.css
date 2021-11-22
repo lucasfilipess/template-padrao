@@ -1,0 +1,43 @@
+.loginContainer {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--auth-bg);
+}
+
+.imageBackground {
+  width: 64.1%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.logoContainer {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  height: 35%;
+  width: 100%;
+}
+
+.logo {
+  width: 11.375rem;
+  height: 3.438rem;
+}
+
+@media (max-width: 768px) {
+  .loginContainer {
+    flex-direction: column;
+    justify-content: flex-end;
+    background-color: var(--auth-mobile-bg);
+  }
+
+  .imageBackground {
+    display: none;
+  }
+
+  .logoContainer {
+    display: flex;
+  }
+}

@@ -3,9 +3,9 @@ import { useLocation, useHistory } from 'react-router-dom'
 import { Collapse, Overlay } from 'react-bootstrap'
 import { BsChevronLeft, BsChevronDown } from 'react-icons/bs'
 import classNames from 'classnames'
-import { useLayout, useTheme } from 'hooks'
+import { useLayout } from 'hooks'
 import { MenusProps } from 'config'
-import styles from './styles.module.scss'
+import styles from './styles.module.css'
 
 export type SubMenuProps = MenusProps & {
   onClick: () => void
@@ -20,7 +20,6 @@ const SubMenu: React.FC<SubMenuProps> = ({
   isOpenMenu
 }) => {
   const { isOpen } = useLayout()
-  const { isDark } = useTheme()
   const { pathname } = useLocation()
   const { push } = useHistory()
   const [show, setShow] = useState(false)
@@ -37,14 +36,12 @@ const SubMenu: React.FC<SubMenuProps> = ({
 
   if (isOpen)
     return (
-      <li className={styles.subMenuWrapper}>
+      <li className={styles.subMenuContainer}>
         <button
           aria-controls="collapse"
           aria-expanded={isOpenMenu}
           className={classNames(styles.subMenuButton, {
-            [styles.activatedSubMenuButton]: activated,
-            [styles.subMenuButtonDark]: isDark,
-            [styles.activatedSubMenuButtonDark]: activated && isDark
+            [styles.activatedSubMenuButton]: activated
           })}
           onClick={onClick}
         >
@@ -55,13 +52,10 @@ const SubMenu: React.FC<SubMenuProps> = ({
         <Collapse in={isOpenMenu} appear>
           <ul id="collapse" className={styles.subMenuList}>
             {subMenus?.map(({ id, title, path }) => (
-              <li key={id} className={styles.subMenuListItem}>
+              <li key={`sub-menu-${id}`} className={styles.subMenuListItem}>
                 <button
                   className={classNames(styles.subMenuListButton, {
-                    [styles.activatedSubMenuListButton]: path === pathname,
-                    [styles.subMenuListButtonDark]: isDark,
-                    [styles.activatedSubMenuListButtonDark]:
-                      path === pathname && isDark
+                    [styles.activatedSubMenuListButton]: path === pathname
                   })}
                   onClick={() => push(path ?? '')}
                 >
@@ -76,15 +70,13 @@ const SubMenu: React.FC<SubMenuProps> = ({
 
   return (
     <>
-      <li className={styles.subMenuWrapper}>
+      <li className={styles.subMenuContainer}>
         <button
           onClick={onClick}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
           className={classNames(styles.subMenuButtonCollapse, {
-            [styles.activatedSubMenuButtonCollapse]: activated,
-            [styles.subMenuButtonCollapseDark]: isDark,
-            [styles.activatedSubMenuButtonCollapseDark]: activated && isDark
+            [styles.activatedSubMenuButtonCollapse]: activated
           })}
           ref={target}
         >
@@ -101,14 +93,14 @@ const SubMenu: React.FC<SubMenuProps> = ({
             {...props}
           >
             {subMenus?.map(({ id, title, path }) => (
-              <li key={id} className={styles.subMenuListItemCollapsed}>
+              <li
+                key={`sub-menu-${id}`}
+                className={styles.subMenuListItemCollapsed}
+              >
                 <button
                   className={classNames(styles.subMenuListButtonCollapse, {
                     [styles.activatedSubMenuListButtonCollapse]:
-                      path === pathname,
-                    [styles.subMenuListButtonCollapseDark]: isDark,
-                    [styles.activatedSubMenuListButtonCollapseDark]:
-                      path === pathname && isDark
+                      path === pathname
                   })}
                   onClick={() => push(path ?? '')}
                 >

@@ -2,30 +2,33 @@ import React from 'react'
 import {
   BsExclamationTriangle,
   BsCheckCircle,
-  BsInfoCircle
+  BsInfoCircle,
+  BsShieldExclamation
 } from 'react-icons/bs'
-import styles from './styles.module.scss'
+import classNames from 'classnames'
+import styles from './styles.module.css'
 
 export type ToastProps = {
-  type: 'success' | 'warning' | 'error'
+  type: 'success' | 'warning' | 'error' | 'info'
   message: string
 }
 
 const icons = {
   success: BsCheckCircle,
-  warning: BsInfoCircle,
-  error: BsExclamationTriangle
+  warning: BsExclamationTriangle,
+  error: BsShieldExclamation,
+  info: BsInfoCircle
 }
 
 const Toast: React.FC<ToastProps> = ({ type, message }) => {
   const Icon = icons[type]
   return (
-    <div className={styles.container}>
-      <div className={styles.iconWrapper}>
+    <div className={classNames(styles.toastContainer)}>
+      <div className={styles.iconContainer}>
         <Icon className={styles[type]} />
       </div>
-      <div className={styles.message}>
-        <p>{message}</p>
+      <div>
+        <p className={styles.message}>{message}</p>
       </div>
     </div>
   )

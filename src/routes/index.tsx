@@ -5,14 +5,22 @@ import {
   Login,
   Register,
   Dashboard,
-  Components,
   Forms,
   Tables,
-  General,
   NotFound,
   NotConnection,
   InternalServerError,
-  NotAuthorized
+  NotAuthorized,
+  Alerts,
+  CheckboxRadio,
+  Buttons,
+  Cards,
+  Dropdowns,
+  Lightbox,
+  Modal,
+  TabsAccordions,
+  Icons,
+  Axios
 } from 'pages'
 import Route from './Route'
 
@@ -30,13 +38,7 @@ export const Routes: React.FC = () => (
         />
         <Route
           isPrivate
-          path="/ui/components"
-          title="Componentes"
-          component={Components}
-        />
-        <Route
-          isPrivate
-          path="/ui/formularios"
+          path="/formularios"
           title="Formulários"
           component={Forms}
         />
@@ -48,11 +50,39 @@ export const Routes: React.FC = () => (
         />
         <Route
           isPrivate
-          path="/configuracoes/geral"
-          title="Geral"
-          component={General}
+          path="/ui/alertas"
+          title="Alertas"
+          component={Alerts}
         />
-
+        <Route
+          isPrivate
+          path="/ui/checkbox-radio"
+          title="Checkbox - Radio"
+          component={CheckboxRadio}
+        />
+        <Route isPrivate path="/ui/botoes" title="Botões" component={Buttons} />
+        <Route isPrivate path="/ui/cards" title="Botões" component={Cards} />
+        <Route
+          isPrivate
+          path="/ui/dropdowns"
+          title="Dropdowns"
+          component={Dropdowns}
+        />
+        <Route
+          isPrivate
+          path="/ui/lightbox"
+          title="Lightbox"
+          component={Lightbox}
+        />
+        <Route isPrivate path="/ui/modal" title="Modal" component={Modal} />
+        <Route
+          isPrivate
+          path="/ui/tabs-accordions"
+          title="Tabs/Accordions"
+          component={TabsAccordions}
+        />
+        <Route isPrivate path="/ui/icones" title="Ícones" component={Icons} />
+        <Route isPrivate path="/axios" title="Axios" component={Axios} />
         <Route
           isPrivate
           path="/errors/nao-encontrado"

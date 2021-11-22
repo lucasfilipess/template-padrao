@@ -1,13 +1,12 @@
 import React from 'react'
-import { Table, TableProps, Title } from 'components/atoms'
-import styles from './styles.module.scss'
+import { Table, TableProps } from 'components/atoms'
+import styles from './styles.module.css'
 
 export type TablesProps = TableProps
 
 const Tables: React.FC<TablesProps> = ({ ...rest }) => {
   return (
-    <div className={styles.container}>
-      <Title>Tabela</Title>
+    <div className={styles.tableContainer}>
       <Table {...rest} />
     </div>
   )

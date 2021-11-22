@@ -1,0 +1,17 @@
+.buttonsContainer {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .buttonsContainer {
+    margin-top: 0;
+    flex-direction: column-reverse;
+    width: 100%;
+    gap: 0.75rem;
+  }
+  .buttonsContainer > button {
+    width: 100%;
+  }
+}

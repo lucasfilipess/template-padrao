@@ -1,16 +1,14 @@
 import React from 'react'
-import { useTheme } from 'hooks'
 import {
   Button as BootstrapButton,
   ButtonProps as BootstrapButtonProps
 } from 'react-bootstrap'
 import classNames from 'classnames'
-import styles from './styles.module.scss'
+import './styles.css'
 
 export type ButtonProps = BootstrapButtonProps
 
 const Button: React.FC<ButtonProps> = ({ children, variant, ...rest }) => {
-  const { isDark } = useTheme()
   const isSecondary = variant === 'secondary'
   const isOutline = variant === 'outline-primary'
   const isOutlineSecondary = variant === 'outline-secondary'
@@ -18,16 +16,11 @@ const Button: React.FC<ButtonProps> = ({ children, variant, ...rest }) => {
 
   return (
     <BootstrapButton
-      className={classNames(styles.button, {
-        [styles.buttonDark]: isDark,
-        [styles.secondary]: isSecondary,
-        [styles.secondaryDark]: isSecondary && isDark,
-        [styles.outline]: isOutline,
-        [styles.outlineDark]: isOutline && isDark,
-        [styles.secondaryOutline]: isOutlineSecondary,
-        [styles.secondaryOutlineDark]: isOutlineSecondary && isDark,
-        [styles.link]: isLink,
-        [styles.linkDark]: isLink && isDark
+      className={classNames({
+        secondary: isSecondary,
+        outline: isOutline,
+        secondaryOutline: isOutlineSecondary,
+        link: isLink
       })}
       variant={variant}
       {...rest}

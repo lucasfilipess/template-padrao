@@ -1,0 +1,41 @@
+.avatarContainer {
+  display: flex;
+  align-items: center;
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+.avatarContainer:after {
+  display: none !important;
+}
+
+.avatarContainer > span {
+  white-space: nowrap;
+  font-size: 0.75rem;
+  line-height: 0.813rem;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.avatarContainer > img {
+  height: 1.5rem;
+  width: 1.5rem;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
+
+.dropdownItem {
+  white-space: nowrap;
+  font-size: 0.75rem;
+  line-height: 0.813rem;
+  color: var(--text);
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .avatarContainer > span {
+    display: none;
+  }
+}

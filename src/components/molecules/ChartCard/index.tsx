@@ -1,9 +1,7 @@
 import React, { ElementType } from 'react'
-import { Card } from 'components/atoms'
+import { Card } from 'react-bootstrap'
 import { RadialChart } from 'react-vis'
-import classNames from 'classnames'
-import { useTheme } from 'hooks'
-import styles from './styles.module.scss'
+import styles from './styles.module.css'
 
 export type ChartProps = {
   angle?: number | undefined
@@ -31,35 +29,22 @@ const ChartCard: React.FC<ChartCardProps> = ({
   chart,
   total
 }) => {
-  const { isDark } = useTheme()
   return (
     <Card>
       <Card.Body className={styles.cardBody}>
         <div>
-          <div className={styles.wrapper}>
+          <div className={styles.textContainer}>
             <span
               className={styles.iconFill}
               style={{ backgroundColor: iconBackground }}
             >
               <Icon />
             </span>
-            <div className={styles.container}>
-              <h6
-                className={classNames(styles.title, {
-                  [styles.textDark]: isDark
-                })}
-              >
-                {title}
-              </h6>
+            <div className={styles.titleContainer}>
+              <h6 className={styles.title}>{title}</h6>
             </div>
           </div>
-          <p
-            className={classNames(styles.description, {
-              [styles.textDark]: isDark
-            })}
-          >
-            {description}
-          </p>
+          <p className={styles.description}>{description}</p>
         </div>
         <div className={styles.chart}>
           <RadialChart
@@ -72,11 +57,7 @@ const ChartCard: React.FC<ChartCardProps> = ({
             height={200}
             animation="gentle"
           />
-          <span
-            className={classNames(styles.total, { [styles.textDark]: isDark })}
-          >
-            {total} registros
-          </span>
+          <span className={styles.total}>{total} registros</span>
         </div>
       </Card.Body>
     </Card>

@@ -1,0 +1,22 @@
+.navbarContainer {
+  display: flex;
+  align-items: center;
+  height: 3.5rem;
+  width: 100%;
+  background: var(--layout-bg);
+  box-shadow: 0px 1px 10px rgba(64, 64, 64, 0.15);
+  padding: 0 1.438rem;
+  position: fixed;
+  z-index: 4;
+}
+
+.navbarContainer > img {
+  max-width: 4.813rem;
+  margin-left: 5.438rem;
+}
+
+@media (max-width: 768px) {
+  .navbarContainer > img {
+    display: none;
+  }
+}

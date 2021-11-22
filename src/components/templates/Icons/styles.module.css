@@ -1,0 +1,25 @@
+.iconContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.icon {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 55px;
+  margin-bottom: 16px;
+}
+
+.icon > svg {
+  color: var(--primary);
+  height: 30px;
+  width: 30px;
+}
+
+.icon > span {
+  color: var(--text);
+}

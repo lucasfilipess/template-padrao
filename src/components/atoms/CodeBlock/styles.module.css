@@ -1,0 +1,21 @@
+.codeContainer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 14px;
+  width: 100%;
+  padding: 14px 0;
+}
+
+.codeContainer > button {
+  align-self: flex-end;
+  margin: 0 14px -52px 0;
+  z-index: 1;
+}
+
+.prism pre {
+  padding-top: 31px;
+}
+
+.visible {
+  visibility: visible;
+}

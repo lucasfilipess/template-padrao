@@ -1,0 +1,59 @@
+.cardContainer {
+  max-width: 15.938rem;
+  height: 5.438rem;
+  width: 100%;
+  box-shadow: 3px 1px 20px rgba(95, 116, 136, 0.2);
+  border-radius: 0.75rem !important;
+  padding: 0 1rem;
+}
+
+.cardBody {
+  display: flex;
+  align-items: center;
+  padding: 0 !important;
+  width: 100%;
+}
+
+.iconFill {
+  min-width: 2.5rem;
+  min-height: 2.5rem;
+  border-radius: 0.438rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.iconFill svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.textContainer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-left: 1rem;
+  max-height: 2.5rem;
+  width: 100%;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.125rem;
+  color: var(--text);
+  margin-bottom: 0;
+}
+
+.subtitle {
+  font-size: 0.813rem;
+  line-height: 0.938rem;
+  color: var(--sub-text);
+}
+
+@media (max-width: 768px) {
+  .cardContainer {
+    max-width: 100%;
+  }
+}

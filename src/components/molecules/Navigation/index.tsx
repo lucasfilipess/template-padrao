@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Menu, SubMenu } from 'components/atoms'
 import { MENUS } from 'config'
-import styles from './styles.module.scss'
+import styles from './styles.module.css'
 
 const Navigation: React.FC = () => {
   const [openedMenu, setOpenedMenu] = useState<number | null>(null)
@@ -12,7 +12,7 @@ const Navigation: React.FC = () => {
   }
 
   return (
-    <div className={styles.menu}>
+    <div className={styles.menuContainer}>
       <ul className={styles.list}>
         {MENUS.map(({ id, icon, title, path, subMenus }) =>
           subMenus ? (

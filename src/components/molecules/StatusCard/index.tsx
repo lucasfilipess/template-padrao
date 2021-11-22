@@ -1,8 +1,6 @@
 import React, { ElementType } from 'react'
-import classNames from 'classnames'
-import { useTheme } from 'hooks'
-import { Card } from 'components/atoms'
-import styles from './styles.module.scss'
+import { Card } from 'react-bootstrap'
+import styles from './styles.module.css'
 
 export type StatusCardProps = {
   title: string
@@ -17,9 +15,8 @@ const StatusCard: React.FC<StatusCardProps> = ({
   icon: Icon,
   iconBackground
 }) => {
-  const { isDark } = useTheme()
   return (
-    <Card className={classNames(styles.card, { [styles.cardDark]: isDark })}>
+    <Card className={styles.cardContainer}>
       <Card.Body className={styles.cardBody}>
         <span
           className={styles.iconFill}
@@ -27,19 +24,9 @@ const StatusCard: React.FC<StatusCardProps> = ({
         >
           <Icon />
         </span>
-        <div className={styles.container}>
-          <h6
-            className={classNames(styles.title, { [styles.titleDark]: isDark })}
-          >
-            {title}
-          </h6>
-          <span
-            className={classNames(styles.subtitle, {
-              [styles.subtitleDark]: isDark
-            })}
-          >
-            {subtitle}
-          </span>
+        <div className={styles.textContainer}>
+          <h6 className={styles.title}>{title}</h6>
+          <span className={styles.subtitle}>{subtitle}</span>
         </div>
       </Card.Body>
     </Card>

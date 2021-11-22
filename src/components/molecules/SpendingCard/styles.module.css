@@ -1,0 +1,48 @@
+.cardContainer {
+  height: 4.5rem;
+  box-shadow: 5px 4px 13px rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem !important;
+  width: 100%;
+  padding: 0 1.5rem;
+}
+
+.cardBody {
+  display: flex;
+  align-items: center;
+  padding: 0 !important;
+  width: 100%;
+}
+
+.numberFill {
+  min-width: 2.5rem;
+  min-height: 2.5rem;
+  background-color: var(--fill);
+  border-radius: 50%;
+  color: var(--secondary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+}
+
+.textContainer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-left: 1rem;
+  max-height: 2.5rem;
+  width: 100%;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.125rem;
+  color: var(--text);
+}
+
+.subtitle {
+  font-size: 0.75rem;
+  line-height: 0.875rem;
+  color: var(--sub-text);
+}

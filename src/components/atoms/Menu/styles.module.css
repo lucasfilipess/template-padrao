@@ -1,0 +1,63 @@
+.menuContainer {
+  width: 100%;
+}
+
+.menuButton {
+  align-items: center;
+  border: none;
+  background-color: transparent;
+  color: var(--menu-btn-text);
+  display: flex;
+  height: 3rem;
+  padding: 0.813rem;
+  transition: all 0.3s;
+  width: 100%;
+}
+
+.menuButton:hover {
+  background-color: var(--menu-btn-bg-active);
+  color: var(--menu-btn-text-active);
+}
+
+.menuButton span {
+  font-size: 0.75rem;
+  line-height: 0.813rem;
+}
+
+.menuButton > svg {
+  height: 1.313rem;
+  margin-right: 0.5rem;
+  width: 1.313rem;
+}
+
+.activatedMenuButton {
+  background-color: var(--menu-btn-bg-active);
+  color: var(--menu-btn-text-active);
+}
+
+.menuButtonCollapse {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 3.938rem;
+  padding: 0.5rem;
+}
+
+.menuButtonCollapse > span {
+  font-size: 0.625rem;
+  line-height: 0.688rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 100%;
+}
+
+.menuButtonCollapse > svg {
+  margin: 0 0 0.563rem 0;
+}
+
+@media (max-width: 768px) {
+  .menuButton {
+    border-radius: 0.313rem;
+  }
+}

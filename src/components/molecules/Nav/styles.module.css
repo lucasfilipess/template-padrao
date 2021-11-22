@@ -1,0 +1,43 @@
+.navContainer {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  gap: 1.625rem;
+}
+
+.navContainer .search {
+  width: 10rem;
+  height: 1.813rem;
+  background: var(--search-bg);
+  border-radius: 0.125rem;
+  border: none;
+  font-size: 0.75rem;
+}
+
+.search::placeholder {
+  font-size: 0.75rem;
+  line-height: 0.75rem;
+  color: var(--search-placeholder);
+}
+
+.iconButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  padding: 0;
+  color: var(--icon-button);
+}
+
+.iconButton > svg {
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .navContainer .search,
+  .iconButton {
+    display: none;
+  }
+}

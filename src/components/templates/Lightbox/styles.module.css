@@ -1,0 +1,25 @@
+.imageContainer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.imageContainer > div {
+  width: 300px;
+  object-fit: contain;
+}
+
+.imageContainer div img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  border-radius: 1rem;
+}
+
+@media (max-width: 768px) {
+  .imageContainer {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}

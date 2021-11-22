@@ -1,0 +1,14 @@
+.toggleContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  padding: 0;
+  color: var(--drawer);
+}
+
+.toggleContainer > svg {
+  height: 1.5rem;
+  width: 1.5rem;
+}

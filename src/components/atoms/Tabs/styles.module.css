@@ -1,0 +1,13 @@
+.tabs .nav-link {
+  color: var(--text);
+}
+
+.tab {
+  background-color: var(--body-bg);
+  color: var(--tex);
+}
+
+.contentContainer {
+  padding: 1rem;
+  color: var(--text);
+}

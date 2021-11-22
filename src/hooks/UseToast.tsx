@@ -3,9 +3,7 @@ import { Toast, ToastProps } from 'components/atoms'
 
 const useToast = () => {
   const createToast = ({ type, message }: ToastProps) =>
-    toast(<Toast type={type} message={message} />, {
-      type: type
-    })
+    toast(<Toast type={type} message={message} />, { type })
   return { createToast }
 }
 

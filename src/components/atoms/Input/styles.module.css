@@ -1,0 +1,28 @@
+.inputContainer {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  width: 100%;
+}
+
+.inputContainer div {
+  width: 100%;
+}
+
+.fixAdornment {
+  padding-right: 3.125rem !important;
+}
+
+.tooltip {
+  margin-left: 9px !important;
+}
+
+.adornment {
+  position: absolute;
+  z-index: 2;
+  background: transparent;
+  border: none;
+  position: absolute;
+  margin-right: 1.875rem;
+  margin-top: 1rem;
+}

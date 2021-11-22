@@ -10,8 +10,8 @@ import {
 } from 'react-bootstrap'
 import { BsFillInfoCircleFill, BsEyeSlash, BsEye } from 'react-icons/bs'
 import { cpf, cnpj, cep, money, phone } from './masks'
-import { useToggle, useTheme } from 'hooks'
-import styles from './styles.module.scss'
+import { useToggle } from 'hooks'
+import styles from './styles.module.css'
 
 export type InputProps = FormControlProps & {
   feedback?: string
@@ -32,7 +32,6 @@ const Input: React.FC<InputProps> = ({
   type,
   ...rest
 }) => {
-  const { isDark } = useTheme()
   const [visible, toggleVisible] = useToggle(false)
   const isPassword = type === 'password'
 
@@ -58,12 +57,16 @@ const Input: React.FC<InputProps> = ({
   }
 
   return (
-    <div className={styles.container}>
+    <div className={styles.inputContainer}>
       {info && (
         <OverlayTrigger
           delay={{ show: 250, hide: 400 }}
           overlay={(overlayTriggerProps) => (
-            <Tooltip id="info-tooltip" {...overlayTriggerProps}>
+            <Tooltip
+              id="info-tooltip"
+              className={styles.tooltip}
+              {...overlayTriggerProps}
+            >
               {info}
             </Tooltip>
           )}
@@ -83,7 +86,7 @@ const Input: React.FC<InputProps> = ({
               onClick={toggleVisible}
               className={styles.adornment}
             >
-              <BsEye color="#6A6A6A" />
+              <BsEye color="#f7e2e2" />
             </button>
           ) : (
             <button
@@ -97,16 +100,12 @@ const Input: React.FC<InputProps> = ({
         </>
       )}
       <Form.Group>
-        <FloatingLabel
-          className={classNames(styles.label, { [styles.labelDark]: isDark })}
-          label={label}
-        >
+        <FloatingLabel label={label}>
           <Form.Control
             name={name}
             required={required}
-            className={classNames(styles.input, {
-              [styles.fixAdornment]: info || isPassword,
-              [styles.inputDark]: isDark
+            className={classNames({
+              [styles.fixAdornment]: info || isPassword
             })}
             type={!isPassword ? type : visible ? 'text' : 'password'}
             {...maskProps}

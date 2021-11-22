@@ -1,8 +1,6 @@
 import React from 'react'
-import classNames from 'classnames'
-import { Card } from 'components/atoms'
-import { useTheme } from 'hooks'
-import styles from './styles.module.scss'
+import { Card } from 'react-bootstrap'
+import styles from './styles.module.css'
 
 export type SpendingCardProps = {
   id: number
@@ -11,24 +9,13 @@ export type SpendingCardProps = {
 }
 
 const SpendingCard: React.FC<SpendingCardProps> = ({ title, subtitle, id }) => {
-  const { isDark } = useTheme()
   return (
-    <Card className={classNames(styles.card)}>
+    <Card className={styles.cardContainer}>
       <Card.Body className={styles.cardBody}>
         <span className={styles.numberFill}>{id}</span>
-        <div className={styles.container}>
-          <h6
-            className={classNames(styles.title, { [styles.titleDark]: isDark })}
-          >
-            {title}
-          </h6>
-          <span
-            className={classNames(styles.subtitle, {
-              [styles.subtitleDark]: isDark
-            })}
-          >
-            {subtitle}
-          </span>
+        <div className={styles.textContainer}>
+          <h6 className={styles.title}>{title}</h6>
+          <span className={styles.subtitle}>{subtitle}</span>
         </div>
       </Card.Body>
     </Card>

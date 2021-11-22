@@ -1,21 +1,26 @@
 import React from 'react'
-import classNames from 'classnames'
 import { Formik } from 'formik'
-import { Form, Card, Container, Row, Col } from 'react-bootstrap'
-import { useTheme } from 'hooks'
-import { Button, Input, Select, OptionsProps } from 'components/atoms'
-import styles from './styles.module.scss'
+import { Button, Form, Card, Container, Row, Col } from 'react-bootstrap'
+import { Input, Select, OptionsProps, Textarea } from 'components/atoms'
+import styles from './styles.module.css'
 
 export type FormsValue = {
   name: string
   address: string
+  email: string
+  cep: string
+  date: string
+  hour: string
   number: number
   fatherName: string
   motherName: string
+  phone: string
   activity: string
   seniority: string
   cpfcnpj: string
+  money: string
   password: string
+  description: string
   autocomplete: string
 }
 
@@ -30,7 +35,6 @@ const FormsCard: React.FC<FormsCardProps> = ({
   onSubmit,
   validationSchema
 }) => {
-  const { isDark } = useTheme()
   const options: OptionsProps = [
     {
       value: 'Júnior',
@@ -47,18 +51,12 @@ const FormsCard: React.FC<FormsCardProps> = ({
   ]
 
   return (
-    <Card className={classNames(styles.card, { [styles.cardDark]: isDark })}>
-      <Card.Body className={styles.cardBody}>
-        <Card.Title
-          className={classNames(styles.title, { [styles.titleDark]: isDark })}
-        >
+    <Card>
+      <Card.Body>
+        <Card.Title className={styles.title}>
           Cadastro de funcionário
         </Card.Title>
-        <Card.Subtitle
-          className={classNames(styles.subtitle, {
-            [styles.subtitleDark]: isDark
-          })}
-        >
+        <Card.Subtitle className={styles.subtitle}>
           Cadastro individual de funcionário - texto alternativo/explicativo
         </Card.Subtitle>
         <Formik
@@ -67,10 +65,10 @@ const FormsCard: React.FC<FormsCardProps> = ({
           validationSchema={validationSchema}
         >
           {({ errors, handleSubmit, handleChange, touched, values }) => (
-            <Form noValidate onSubmit={handleSubmit} className={styles.form}>
+            <Form noValidate onSubmit={handleSubmit}>
               <Container className={styles.container}>
                 <Row className={styles.row}>
-                  <Col xs={12} md={5}>
+                  <Col xs={12} md={4}>
                     <Input
                       feedback={errors.name}
                       isInvalid={touched.name && !!errors.name}
@@ -82,6 +80,73 @@ const FormsCard: React.FC<FormsCardProps> = ({
                       required
                     />
                   </Col>
+                  <Col xs={12} md={4}>
+                    <Input
+                      feedback={errors.cpfcnpj}
+                      isInvalid={touched.cpfcnpj && !!errors.cpfcnpj}
+                      label="CPF/CNPJ"
+                      maskType="cpfcnpj"
+                      name="cpfcnpj"
+                      info="Seu CPF ou CNPJ"
+                      onChange={handleChange}
+                      type="text"
+                      value={values.cpfcnpj}
+                      required
+                    />
+                  </Col>
+                  <Col xs={12} md={4}>
+                    <Input
+                      feedback={errors.phone}
+                      isInvalid={touched.phone && !!errors.phone}
+                      label="Telefone"
+                      maskType="phone"
+                      name="phone"
+                      onChange={handleChange}
+                      type="phone"
+                      value={values.phone}
+                      required
+                    />
+                  </Col>
+                </Row>
+                <Row className={styles.row}>
+                  <Col xs={12} md={4}>
+                    <Input
+                      feedback={errors.email}
+                      isInvalid={touched.email && !!errors.email}
+                      label="Email"
+                      name="email"
+                      onChange={handleChange}
+                      type="email"
+                      value={values.email}
+                      required
+                    />
+                  </Col>
+                  <Col xs={12} md={4}>
+                    <Input
+                      feedback={errors.motherName}
+                      isInvalid={touched.motherName && !!errors.motherName}
+                      label="Nome completo da mãe"
+                      name="motherName"
+                      onChange={handleChange}
+                      type="text"
+                      value={values.motherName}
+                      required
+                    />
+                  </Col>
+                  <Col xs={12} md={4}>
+                    <Input
+                      feedback={errors.fatherName}
+                      isInvalid={touched.fatherName && !!errors.fatherName}
+                      label="Nome completo do pai"
+                      name="fatherName"
+                      onChange={handleChange}
+                      type="text"
+                      value={values.fatherName}
+                      required
+                    />
+                  </Col>
+                </Row>
+                <Row className={styles.row}>
                   <Col xs={12} md={5}>
                     <Input
                       feedback={errors.address}
@@ -91,6 +156,20 @@ const FormsCard: React.FC<FormsCardProps> = ({
                       onChange={handleChange}
                       type="text"
                       value={values.address}
+                      required
+                    />
+                  </Col>
+                  <Col xs={12} md={5}>
+                    <Input
+                      feedback={errors.cep}
+                      isInvalid={touched.cep && !!errors.cep}
+                      label="CEP"
+                      name="cep"
+                      maskType="cep"
+                      info="CEP do seu endereço"
+                      onChange={handleChange}
+                      type="text"
+                      value={values.cep}
                       required
                     />
                   </Col>
@@ -108,33 +187,7 @@ const FormsCard: React.FC<FormsCardProps> = ({
                   </Col>
                 </Row>
                 <Row className={styles.row}>
-                  <Col xs={12} md={6}>
-                    <Input
-                      feedback={errors.motherName}
-                      isInvalid={touched.motherName && !!errors.motherName}
-                      label="Nome completo da mãe"
-                      name="motherName"
-                      onChange={handleChange}
-                      type="text"
-                      value={values.motherName}
-                      required
-                    />
-                  </Col>
-                  <Col xs={12} md={6}>
-                    <Input
-                      feedback={errors.fatherName}
-                      isInvalid={touched.fatherName && !!errors.fatherName}
-                      label="Nome completo do pai"
-                      name="fatherName"
-                      onChange={handleChange}
-                      type="text"
-                      value={values.fatherName}
-                      required
-                    />
-                  </Col>
-                </Row>
-                <Row className={styles.row}>
-                  <Col xs={12} md={3}>
+                  <Col xs={12} md={4}>
                     <Input
                       feedback={errors.activity}
                       isInvalid={touched.activity && !!errors.activity}
@@ -146,7 +199,7 @@ const FormsCard: React.FC<FormsCardProps> = ({
                       required
                     />
                   </Col>
-                  <Col xs={12} md={3}>
+                  <Col xs={12} md={4}>
                     <Select
                       defaultValue={values.seniority}
                       feedback={errors.seniority}
@@ -158,20 +211,46 @@ const FormsCard: React.FC<FormsCardProps> = ({
                       required
                     />
                   </Col>
-                  <Col xs={12} md={3}>
+                  <Col xs={12} md={4}>
                     <Input
-                      feedback={errors.cpfcnpj}
-                      isInvalid={touched.cpfcnpj && !!errors.cpfcnpj}
-                      label="CPF/CNPJ"
-                      name="cpfcnpj"
+                      feedback={errors.money}
+                      isInvalid={touched.money && !!errors.money}
+                      label="Pretensão salarial (R$)"
+                      name="money"
+                      maskType="money"
                       onChange={handleChange}
-                      maskType="cpfcnpj"
-                      value={values.cpfcnpj}
-                      info="cpf ou cnpj"
+                      type="text"
+                      value={values.money}
                       required
                     />
                   </Col>
-                  <Col xs={12} md={3}>
+                </Row>
+                <Row className={styles.row}>
+                  <Col xs={12} md={4}>
+                    <Input
+                      feedback={errors.date}
+                      isInvalid={touched.date && !!errors.date}
+                      label="Data"
+                      name="date"
+                      onChange={handleChange}
+                      type="date"
+                      value={values.date}
+                      required
+                    />
+                  </Col>
+                  <Col xs={12} md={4}>
+                    <Input
+                      feedback={errors.hour}
+                      isInvalid={touched.hour && !!errors.hour}
+                      label="Horário"
+                      name="hour"
+                      onChange={handleChange}
+                      type="time"
+                      value={values.hour}
+                      required
+                    />
+                  </Col>
+                  <Col xs={12} md={4}>
                     <Input
                       feedback={errors.password}
                       isInvalid={touched.password && !!errors.password}
@@ -184,7 +263,21 @@ const FormsCard: React.FC<FormsCardProps> = ({
                     />
                   </Col>
                 </Row>
-                <div className={styles.button}>
+                <Row className={styles.row}>
+                  <Col xs={12}>
+                    <Textarea
+                      feedback={errors.description}
+                      isInvalid={touched.description && !!errors.description}
+                      label="Descrição"
+                      name="description"
+                      onChange={handleChange}
+                      type="description"
+                      value={values.description}
+                      required
+                    />
+                  </Col>
+                </Row>
+                <div className={styles.buttonContainer}>
                   <Button type="submit">Salvar</Button>
                 </div>
               </Container>

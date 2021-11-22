@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Form, FloatingLabel, OverlayTrigger, Tooltip } from 'react-bootstrap'
 import AutocompleteComponent from 'react-autocomplete'
 import { BsFillInfoCircleFill } from 'react-icons/bs'
-import styles from './styles.module.scss'
+import styles from './styles.module.css'
 
 export type AutocompleteProps = {
   feedback?: string

@@ -1,6 +1,6 @@
 import React from 'react'
-import { ToastContainer, Zoom } from 'react-toastify'
-import styles from 'components/atoms/Toast/styles.module.scss'
+import { ToastContainer, Slide } from 'react-toastify'
+import styles from 'components/atoms/Toast/styles.module.css'
 import 'react-toastify/dist/ReactToastify.css'
 
 const ToastProvider: React.FC = ({ children }) => {
@@ -9,7 +9,7 @@ const ToastProvider: React.FC = ({ children }) => {
       {children}
       <ToastContainer
         className={styles.styledToast}
-        transition={Zoom}
+        transition={Slide}
         hideProgressBar={true}
         position="top-right"
         autoClose={3000}

@@ -1,0 +1,187 @@
+@import "https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap";
+@import "colors.css";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background-color: var(--body-bg);
+}
+
+a {
+  color: var(--primary);
+}
+
+textarea {
+  min-height: 10rem !important;
+}
+
+/* ////////// Botões ////////// */
+
+.btn-primary {
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
+.btn-primary:hover,
+.btn-primary:active {
+  background-color: var(--primary-hover);
+  border-color: var(--primary-hover);
+}
+
+.btn-primary:focus {
+  background-color: var(--primary-hover);
+  border-color: var(--primary-hover);
+  box-shadow: 0 0 0 0.25rem var(--primary-focus) !important;
+}
+
+.btn-primary.disabled,
+.btn-primary:disabled {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  opacity: 0.8;
+}
+
+.btn-outline-primary {
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:active {
+  border-color: var(--primary);
+  background-color: var(--primary);
+}
+
+.btn-outline-primary:focus {
+  box-shadow: 0 0 0 0.25rem var(--primary-focus) !important;
+}
+
+.btn-secondary {
+  background-color: var(--secondary);
+  border-color: var(--secondary);
+}
+
+.btn-secondary:hover,
+.btn-secondary:active {
+  background-color: var(--secondary-hover);
+  border-color: var(--secondary-hover);
+}
+
+.btn-secondary:focus {
+  background-color: var(--secondary-hover);
+  border-color: var(--secondary-hover);
+  box-shadow: 0 0 0 0.25rem var(--secondary-focus) !important;
+}
+
+.btn-secondary.disabled,
+.btn-secondary:disabled {
+  background-color: var(--secondary);
+  border-color: var(--secondary);
+  opacity: 0.8;
+}
+
+.btn-outline-secondary {
+  color: var(--secondary);
+  border-color: var(--secondary);
+}
+
+.btn-outline-secondary:hover,
+.btn-outline-secondary:active {
+  border-color: var(--secondary);
+  background-color: var(--secondary);
+}
+
+.btn-outline-secondary:focus {
+  box-shadow: 0 0 0 0.25rem var(--secondary-focus) !important;
+}
+
+/* ////////// Inputs ////////// */
+
+.form-control {
+  background-color: transparent;
+  color: var(--input);
+}
+
+.form-select {
+  color: var(--input);
+  background-color: transparent;
+}
+
+.form-floating label {
+  color: var(--input) !important;
+}
+
+.form-control:focus {
+  border-color: var(--primary);
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem var(--primary-focus);
+  background-color: transparent;
+  color: var(--input);
+}
+
+.form-check-input:checked {
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
+.form-check label {
+  color: var(--text);
+}
+
+.form-check-input:focus {
+  box-shadow: 0 0 0 0.25rem var(--primary-focus);
+}
+
+.form-select:focus {
+  border-color: var(--primary);
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem var(--primary-focus);
+}
+
+/* ////////// Cards ////////// */
+
+.card {
+  width: 100%;
+  box-shadow: 5px 4px 13px rgba(0, 0, 0, 0.1);
+  border-radius: 0.75rem;
+  background-color: var(--card);
+}
+
+.card-title {
+  font-weight: 600;
+  font-size: 1.5rem !important;
+  line-height: 1.875rem;
+  color: var(--text);
+}
+
+.card-subtitle {
+  font-size: 1rem !important;
+  line-height: 1.5rem;
+  color: var(--sub-text);
+  margin-bottom: 2.5rem !important;
+}
+
+.card-text {
+  color: var(--text);
+}
+/* ////////// Dropdown ////////// */
+
+.show > .btn-primary.dropdown-toggle {
+  background-color: var(--primary-hover);
+  border-color: var(--primary-hover);
+}
+
+.dropdown-item:active {
+  background-color: var(--primary);
+}

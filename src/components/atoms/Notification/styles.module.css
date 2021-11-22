@@ -1,0 +1,119 @@
+.bell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  padding: 0;
+  color: var(--icon-button);
+}
+
+.bell:after {
+  display: none !important;
+}
+
+.bell > svg {
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+.bell > span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ec7459;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 0.5rem;
+  color: white;
+  height: 0.75rem;
+  width: 0.75rem;
+  border-radius: 50%;
+  margin-left: -0.625rem;
+  margin-top: -0.313rem;
+}
+
+.menu {
+  width: 31.25rem !important;
+  padding: 0 !important;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 0.75rem;
+  width: 100%;
+}
+
+.header > span {
+  color: var(--text);
+}
+
+.headerButton {
+  background: transparent;
+  border: none;
+  color: var(--primary);
+}
+
+.menuItem {
+  display: flex;
+  align-items: center;
+  background-color: #e5e5e5;
+  padding: 0.75rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  width: 100%;
+}
+
+.menuItem:hover {
+  filter: brightness(0.9);
+}
+
+.menuItem > div {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.menuItem > div > svg {
+  color: #8c8c8c;
+  min-width: 1.25rem;
+  min-height: 1.25rem;
+  margin-right: 1rem;
+}
+
+.menuItem > div > p {
+  font-size: 1rem;
+  margin: 0;
+  width: 100%;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.wasRead {
+  background: transparent;
+}
+
+.closeButton {
+  background: transparent;
+  border-radius: 50%;
+  border: none;
+  width: 1.25rem;
+  height: 1.25rem;
+  color: #8c8c8c;
+  transition: all 0.3s;
+  align-self: flex-start;
+}
+
+.closeButton:hover {
+  color: #000;
+}
+
+.closeButton > svg {
+  min-width: 1.25rem;
+  min-height: 1.25rem;
+}

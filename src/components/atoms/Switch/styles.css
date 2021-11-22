@@ -1,0 +1,4 @@
+.switch input:checked {
+  border-color: var(--primary) !important;
+  background-color: var(--primary) !important;
+}

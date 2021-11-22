@@ -1,9 +1,9 @@
 import React from 'react'
-import classNames from 'classnames'
-import { useTheme } from 'hooks'
 import { RegisterCard, RegisterCardProps } from 'components/organisms'
+import { useTheme } from 'hooks'
 import rumoSolucoes from 'assets/images/rumoSolucoes.png'
-import styles from './styles.module.scss'
+import rumoSolucoesDark from 'assets/images/rumoSolucoesDark.png'
+import styles from './styles.module.css'
 
 export type RegisterProps = RegisterCardProps & {
   backgroundImage: string
@@ -15,21 +15,18 @@ const Register: React.FC<RegisterProps> = ({
   onSubmit,
   validationSchema
 }) => {
-  const { isDark } = useTheme()
+  const { theme } = useTheme()
+  const isDark = theme === 'dark'
   return (
-    <div
-      className={classNames(styles.container, {
-        [styles.containerDark]: isDark
-      })}
-    >
+    <div className={styles.loginContainer}>
       <div
-        className={styles.image}
+        className={styles.imageBackground}
         style={{ backgroundImage: `url(${backgroundImage})` }}
       />
-      <div className={styles.logoWrapper}>
+      <div className={styles.logoContainer}>
         <img
           className={styles.logo}
-          src={rumoSolucoes}
+          src={isDark ? rumoSolucoesDark : rumoSolucoes}
           alt="Logo Rumo Soluções"
         />
       </div>

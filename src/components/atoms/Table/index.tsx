@@ -4,44 +4,49 @@ import {
   GridRowData,
   ptBR,
   DataGridProps,
-  GridColumns
+  GridColumns,
+  GridToolbarContainer,
+  GridToolbarColumnsButton,
+  GridToolbarFilterButton,
+  GridToolbarDensitySelector,
+  GridToolbarExport
 } from '@mui/x-data-grid'
-import className from 'classnames'
-import { useTheme } from 'hooks'
-import styles from './styles.module.scss'
-import classNames from 'classnames'
+import styles from './styles.module.css'
 
 export type ColumnsProps = GridColumns
+
 export type RowsProps = GridRowData[]
 
-export type TableProps = DataGridProps & {
-  title?: string
-}
+export type TableProps = DataGridProps
 
-const Table: React.FC<TableProps> = ({ title, rows, columns, ...rest }) => {
-  const { isDark } = useTheme()
+const Table: React.FC<DataGridProps> = ({ rows, columns, ...rest }) => {
   const styledColumns: GridColumns = columns.map((column) => ({
-    headerClassName: classNames(styles.cell, { [styles.cellDark]: isDark }),
-    cellClassName: classNames(styles.cell, { [styles.cellDark]: isDark }),
+    headerClassName: styles.cell,
+    cellClassName: styles.cell,
     ...column
   }))
 
+  const CustomToolbar = () => (
+    <GridToolbarContainer className={styles.gridToolbarContainer}>
+      <GridToolbarColumnsButton />
+      <GridToolbarFilterButton />
+      <GridToolbarDensitySelector />
+      <GridToolbarExport />
+    </GridToolbarContainer>
+  )
+
   return (
-    <div
-      className={className(styles.container, {
-        [styles.containerDark]: isDark
-      })}
-    >
-      {title && <h4>{title}</h4>}
+    <div className={styles.tableContainer}>
       <DataGrid
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         //@ts-ignore
         localeText={ptBR.props.MuiDataGrid.localeText}
         rows={rows}
         columns={styledColumns}
-        className={classNames(styles.dataGrid, {
-          [styles.dataGridDark]: isDark
-        })}
+        className={styles.dataGrid}
+        components={{
+          Toolbar: CustomToolbar
+        }}
         {...rest}
       />
     </div>

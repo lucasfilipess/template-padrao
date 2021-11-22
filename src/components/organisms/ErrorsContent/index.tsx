@@ -4,7 +4,7 @@ import {
   ErrorsButtons,
   ErrorsMessageProps
 } from 'components/molecules'
-import styles from './styles.module.scss'
+import styles from './styles.module.css'
 
 export type ErrorsContentProps = ErrorsMessageProps & {
   src: string

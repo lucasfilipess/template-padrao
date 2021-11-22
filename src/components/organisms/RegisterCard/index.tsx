@@ -1,12 +1,10 @@
 import React from 'react'
 import { Formik } from 'formik'
 import { Link } from 'react-router-dom'
-import classNames from 'classnames'
-import { useTheme } from 'hooks'
 import { Form, Card } from 'react-bootstrap'
 import { Button, Checkbox, Input } from 'components/atoms'
 import { RegisterCredentials } from 'context'
-import styles from './styles.module.scss'
+import styles from './styles.module.css'
 
 export type RegisterCardProps = {
   initialValues: RegisterCredentials
@@ -19,18 +17,11 @@ const RegisterCard: React.FC<RegisterCardProps> = ({
   onSubmit,
   validationSchema
 }) => {
-  const { isDark } = useTheme()
   return (
-    <Card className={classNames(styles.card, { [styles.cardDark]: isDark })}>
+    <Card className={styles.cardContainer}>
       <Card.Body className={styles.cardBody}>
-        <Card.Title
-          className={classNames(styles.title, { [styles.textDark]: isDark })}
-        >
-          Cadastro
-        </Card.Title>
-        <Card.Subtitle
-          className={classNames(styles.subtitle, { [styles.textDark]: isDark })}
-        >
+        <Card.Title className={styles.title}>Cadastro</Card.Title>
+        <Card.Subtitle className={styles.subtitle}>
           Crie uma nova conta
         </Card.Subtitle>
         <Formik
@@ -76,16 +67,12 @@ const RegisterCard: React.FC<RegisterCardProps> = ({
                 value={values.password}
                 required
               />
-              <div className={styles.options}>
+              <div className={styles.optionsContainer}>
                 <Checkbox
                   feedback={errors.terms}
                   isInvalid={touched.terms && !!errors.terms}
                   label={
-                    <label
-                      className={classNames(styles.label, {
-                        [styles.textDark]: isDark
-                      })}
-                    >
+                    <label className={styles.label}>
                       Ao criar a conta, afirmo que concordo com os{' '}
                       <Link to="/">Termos de Privacidade</Link> e os{' '}
                       <Link to="/">Termos de serviço</Link>.
@@ -96,11 +83,7 @@ const RegisterCard: React.FC<RegisterCardProps> = ({
                   required
                 />
               </div>
-              <div
-                className={classNames(styles.buttons, {
-                  [styles.textDark]: isDark
-                })}
-              >
+              <div className={styles.buttonsContainer}>
                 <Button disabled={!values.terms} type="submit">
                   Criar conta
                 </Button>

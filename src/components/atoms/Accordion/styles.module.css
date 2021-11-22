@@ -1,0 +1,9 @@
+.accordion > div {
+  background-color: var(--body-bg) !important;
+  color: var(--text);
+}
+
+.accordion button {
+  background-color: var(--card) !important;
+  color: var(--text);
+}

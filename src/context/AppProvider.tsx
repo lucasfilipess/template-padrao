@@ -4,15 +4,18 @@ import InterceptorProvider from './Interceptor'
 import ToastProvider from './Toast'
 import LayoutProvider from './Layout'
 import ThemeProvider from './Theme'
+import SimpleReactLightbox from 'simple-react-lightbox'
 
 const AppProvider: React.FC = ({ children }) => (
   <AuthProvider>
     <ThemeProvider>
-      <ToastProvider>
-        <InterceptorProvider>
-          <LayoutProvider>{children}</LayoutProvider>
-        </InterceptorProvider>
-      </ToastProvider>
+      <SimpleReactLightbox>
+        <ToastProvider>
+          <InterceptorProvider>
+            <LayoutProvider>{children}</LayoutProvider>
+          </InterceptorProvider>
+        </ToastProvider>
+      </SimpleReactLightbox>
     </ThemeProvider>
   </AuthProvider>
 )

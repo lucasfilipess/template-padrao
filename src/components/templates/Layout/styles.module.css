@@ -1,0 +1,23 @@
+.layoutContainer {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  width: 100%;
+}
+
+.contentContainer {
+  padding: 5rem 4rem 0 4rem;
+  width: 100%;
+  overflow: auto;
+}
+
+.content {
+  width: 100%;
+  margin-bottom: 3.5rem;
+}
+
+@media (max-width: 768px) {
+  .contentContainer {
+    padding: 5rem 2rem 0 2rem;
+  }
+}

@@ -1,7 +1,7 @@
 import axios, { AxiosResponse } from 'axios'
 export type ResponseProps = AxiosResponse
 
-const api = axios.create({
+const Api = axios.create({
   headers: {
     'Content-Type': 'application/json',
     'Access-Control-Allow-Origin': '*'
@@ -9,4 +9,4 @@ const api = axios.create({
   baseURL: process.env.REACT_APP_API_URL
 })
 
-export default api
+export default Api

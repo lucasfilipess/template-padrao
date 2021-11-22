@@ -1,0 +1,170 @@
+.subMenuContainer {
+  width: 100%;
+}
+
+.subMenuButton {
+  align-items: center;
+  border: none;
+  background-color: transparent;
+  color: var(--sub-menu-btn-text);
+  display: flex;
+  height: 3rem;
+  padding: 0.813rem;
+  transition: all 0.3s;
+  width: 100%;
+}
+
+.subMenuButton:hover {
+  background-color: var(--sub-menu-btn-bg-active);
+  color: var(--sub-menu-btn-text-active);
+}
+
+.subMenuButton > span {
+  font-size: 0.75rem;
+  line-height: 0.813rem;
+}
+
+.subMenuButton > svg:first-child {
+  height: 1.313rem;
+  margin-right: 0.5rem;
+  width: 1.313rem;
+}
+
+.subMenuButton > svg:last-child {
+  height: 0.75rem;
+  margin-left: auto;
+  width: 0.75rem;
+}
+
+.activatedSubMenuButton {
+  background-color: var(--sub-menu-btn-bg-active);
+  color: var(--sub-menu-btn-text-active);
+}
+
+.subMenuList {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  list-style: none;
+  padding: 0;
+}
+
+.subMenuListItem {
+  align-items: center;
+  display: flex;
+  justify-content: flex-start;
+  height: 1.813rem;
+}
+
+.subMenuListButton {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-weight: 500;
+  font-size: 0.75rem;
+  line-height: 0.813rem;
+  text-decoration: none;
+  transition: all 0.3s;
+  width: 100%;
+  color: var(--sub-menu-list-text);
+  padding: 8px 8px 8px 13px;
+  border: none;
+  background-color: var(--sub-menu-list-bg);
+}
+
+.subMenuListButton:hover {
+  background-color: var(--sub-menu-list-bg-active);
+  color: var(--sub-menu-list-text-active);
+}
+
+.activatedSubMenuListButton {
+  background-color: var(--sub-menu-list-bg-active);
+  color: var(--sub-menu-list-text-active);
+}
+
+.subMenuButtonCollapse {
+  border: none;
+  background-color: transparent;
+  color: var(--sub-menu-btn-text);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 3.938rem;
+  padding: 0.5rem;
+  transition: all 0.3s;
+  width: 100%;
+}
+
+.subMenuButtonCollapse:hover {
+  background-color: var(--sub-menu-btn-bg-active);
+  color: var(--sub-menu-btn-text-active);
+}
+
+.subMenuButtonCollapse > span {
+  font-size: 0.625rem;
+  line-height: 0.688rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 100%;
+}
+
+.subMenuButtonCollapse > svg {
+  height: 1.313rem;
+  width: 1.313rem;
+  margin-bottom: 0.563rem;
+}
+
+.activatedSubMenuButtonCollapse {
+  background-color: var(--sub-menu-btn-bg-active);
+  color: var(--sub-menu-btn-text-active);
+}
+
+.subMenuListCollapsed {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  list-style: none;
+  padding: 0;
+}
+
+.subMenuListItemCollapsed {
+  align-items: center;
+  background: transparent;
+  display: flex;
+  justify-content: flex-start;
+  height: 1.813rem;
+}
+
+.subMenuListButtonCollapse {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-weight: 500;
+  font-size: 0.75rem;
+  line-height: 0.813rem;
+  text-decoration: none;
+  transition: all 0.3s;
+  width: 100%;
+  color: var(--sub-menu-list-text);
+  background-color: var(--sub-menu-list-bg);
+  padding: 8px 8px 8px 13px;
+  border: none;
+}
+
+.subMenuListButtonCollapse:hover {
+  background-color: var(--sub-menu-list-bg-active);
+  color: var(--sub-menu-list-text-active);
+}
+
+.activatedSubMenuListButtonCollapse {
+  background-color: var(--sub-menu-list-bg-active);
+  color: var(--sub-menu-list-text-active);
+}
+
+@media (max-width: 768px) {
+  .subMenuButton {
+    border-radius: 0.313rem;
+  }
+}

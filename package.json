@@ -28,6 +28,10 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "@types/jest": "^26.0.15",
+    "@types/node": "^12.0.0",
+    "@types/react": "^16.9.53",
+    "@types/react-dom": "^16.9.8",
     "axios": "^0.22.0",
     "bootstrap": "5.1.1",
     "classnames": "^2.3.1",
@@ -40,9 +44,11 @@
     "react-icons": "^4.3.1",
     "react-router-dom": "^5.3.0",
     "react-scripts": "4.0.3",
+    "react-syntax-highlighter": "^15.4.5",
     "react-text-mask": "^5.4.3",
     "react-toastify": "^8.0.3",
     "react-vis": "^1.11.7",
+    "simple-react-lightbox": "^3.6.9-0",
     "text-mask-addons": "^3.8.0",
     "typescript": "^4.0.3",
     "web-vitals": "^0.2.4",
@@ -61,15 +67,13 @@
     "yup": "^0.32.11"
   },
   "devDependencies": {
-    "@types/jest": "^26.0.15",
     "@types/loadable__component": "^5.13.4",
-    "@types/node": "^12.0.0",
-    "@types/react": "^16.9.53",
     "@types/react-autocomplete": "^1.8.6",
-    "@types/react-dom": "^16.9.8",
     "@types/react-router-dom": "^5.3.0",
+    "@types/react-syntax-highlighter": "^13.5.2",
     "@types/react-text-mask": "^5.4.9",
     "@types/react-vis": "^1.11.7",
+    "@types/simple-react-lightbox": "^3.6.1",
     "@typescript-eslint/eslint-plugin": "^4.32.0",
     "@typescript-eslint/parser": "^4.32.0",
     "eslint": "^7.32.0",
@@ -77,7 +81,18 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.26.1",
     "eslint-plugin-react-hooks": "^4.2.0",
-    "prettier": "^2.4.1",
-    "sass": "^1.43.4"
+    "prettier": "^2.4.1"
+  },
+  "eslintConfig": {
+    "overrides": [
+      {
+        "files": [
+          "**/*.stories.*"
+        ],
+        "rules": {
+          "import/no-anonymous-default-export": "off"
+        }
+      }
+    ]
   }
 }

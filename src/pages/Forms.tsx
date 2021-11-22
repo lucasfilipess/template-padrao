@@ -25,6 +25,12 @@ const Form: React.FC = () => {
   const initialValues: FormsValue = {
     name: 'João Silva',
     address: 'Rua do espinheiro',
+    email: 'joao@email.com',
+    cep: '123456789',
+    date: '2021-01-01',
+    hour: '12:00',
+    phone: '31912345678',
+    description: 'Programador experiente',
     number: 100,
     fatherName: 'Joaquim Silva',
     motherName: 'Maria Silva',
@@ -32,12 +38,12 @@ const Form: React.FC = () => {
     seniority: 'Pleno',
     cpfcnpj: '00000000000',
     password: '12345678',
-    autocomplete: ''
+    autocomplete: '',
+    money: '5000'
   }
 
   return (
     <TemplateForms
-      title="Formulários"
       initialValues={initialValues}
       onSubmit={onSubmit}
       validationSchema={validationSchema}

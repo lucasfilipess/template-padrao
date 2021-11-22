@@ -1,0 +1,53 @@
+.styledToast {
+  min-width: 26.75rem;
+}
+
+.styledToast > div {
+  background-color: var(--card);
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15);
+  border-radius: 0.5rem;
+}
+
+.styledToast > div > div > div:first-child {
+  display: none;
+}
+
+.toastContainer {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.iconContainer {
+  margin-right: 0.875rem;
+  min-width: 1.75rem;
+}
+
+.iconContainer > svg {
+  height: 1.75rem;
+  width: 1.75rem;
+}
+
+.success {
+  color: #7dad59;
+}
+
+.warning {
+  color: #dca048;
+}
+
+.error {
+  color: #de3c3f;
+}
+
+.info {
+  color: #0dcaf0;
+}
+
+.message {
+  font-weight: 600;
+  line-height: 1.625rem;
+  color: var(--text);
+  margin: 0;
+}

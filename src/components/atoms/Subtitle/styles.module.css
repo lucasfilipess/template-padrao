@@ -1,0 +1,7 @@
+.subtitle {
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 1.688rem;
+  color: var(--text);
+  margin-bottom: 1rem;
+}

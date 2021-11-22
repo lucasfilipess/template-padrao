@@ -34,7 +34,6 @@ const Tables: React.FC = () => {
   return (
     <TablesTemplate
       pagination
-      title="Tabela Bootstrap"
       rows={rows}
       columns={columns}
       density="compact"

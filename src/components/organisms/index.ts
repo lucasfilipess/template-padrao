@@ -1,6 +1,5 @@
 export { default as Navbar } from './Navbar'
 export { default as Sidebar } from './Sidebar'
-export { default as Topbar } from './Topbar'
 export { default as ErrorsContent } from './ErrorsContent'
 export { default as LoginCard } from './LoginCard'
 export { default as RegisterCard } from './RegisterCard'

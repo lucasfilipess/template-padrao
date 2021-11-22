@@ -1,15 +1,6 @@
 import React from 'react'
-// import { AiOutlineInfoCircle } from 'react-icons/ai'
-import classNames from 'classnames'
-import {
-  Form,
-  FormSelectProps,
-  FloatingLabel
-  // OverlayTrigger,
-  // Tooltip
-} from 'react-bootstrap'
-import { useTheme } from 'hooks'
-import styles from './styles.module.scss'
+import { Form, FormSelectProps, FloatingLabel } from 'react-bootstrap'
+import styles from './styles.module.css'
 
 export type OptionsProps = {
   value: string
@@ -28,30 +19,23 @@ export type SelectProps = FormSelectProps & {
 
 const Select: React.FC<SelectProps> = ({
   feedback,
-  // info,
   label,
   name,
   options,
   required = false,
   ...rest
 }) => {
-  const { isDark } = useTheme()
-
   return (
-    <Form.Group>
-      <FloatingLabel
-        className={classNames(styles.label, { [styles.labelDark]: isDark })}
-        controlId="select"
-        label={label}
-      >
+    <Form.Group className={styles.formGroup}>
+      <FloatingLabel className="label" controlId="select" label={label}>
         <Form.Select
-          className={classNames(styles.select, { [styles.selectDark]: isDark })}
+          className="select"
           name={name}
           required={required}
           {...rest}
         >
           {options.map(({ value, label, disabled }, index) => (
-            <option disabled={disabled} key={index} value={value}>
+            <option disabled={disabled} key={`option-${index}`} value={value}>
               {label}
             </option>
           ))}

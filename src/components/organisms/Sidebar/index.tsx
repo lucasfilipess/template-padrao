@@ -1,20 +1,17 @@
 import React from 'react'
 import { Navigation } from 'components/molecules'
-import { useTheme } from 'hooks'
-import clasNames from 'classnames'
-import styles from './styles.module.scss'
+import classNames from 'classnames'
+import styles from './styles.module.css'
 
 export type SidebarProps = {
   isOpen: boolean
 }
 
 const Sidebar: React.FC<SidebarProps> = ({ isOpen }) => {
-  const { isDark } = useTheme()
   return (
     <div
-      className={clasNames(styles.sidebar, {
-        [styles.open]: isOpen,
-        [styles.sidebarDark]: isDark
+      className={classNames(styles.sidebarContainer, {
+        [styles.sidebarIsOpen]: isOpen
       })}
     >
       <Navigation />

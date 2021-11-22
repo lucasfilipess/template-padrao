@@ -1,6 +1,6 @@
 import React, { createContext, useCallback, useState } from 'react'
 import { STORAGE_NAME } from 'config'
-import { api, ResponseProps } from 'services'
+import { Api, ResponseProps } from 'services'
 
 export type User = {
   name: string
@@ -40,8 +40,8 @@ const AuthProvider: React.FC = ({ children }) => {
     const user = localStorage.getItem(`${STORAGE_NAME}:user`)
 
     if (token && user) {
-      if (api.defaults.headers?.authorization)
-        api.defaults.headers.authorization = `Bearer ${token}`
+      if (Api.defaults.headers?.authorization)
+        Api.defaults.headers.authorization = `Bearer ${token}`
       return { token, user: JSON.parse(user) }
     }
 
@@ -49,7 +49,7 @@ const AuthProvider: React.FC = ({ children }) => {
   })
 
   const login = useCallback(async (loginData: LoginCredentials) => {
-    // const { data }: ResponseProps = await api.post('/login', loginData)
+    // const { data }: ResponseProps = await Api.post('/login', loginData)
     console.log(loginData)
     const { data, status } = {
       data: {
@@ -64,14 +64,14 @@ const AuthProvider: React.FC = ({ children }) => {
       name
     }
     localStorage.setItem(`${STORAGE_NAME}:user`, JSON.stringify(user))
-    if (api.defaults.headers?.authorization)
-      api.defaults.headers.authorization = `Bearer ${token}`
+    if (Api.defaults.headers?.authorization)
+      Api.defaults.headers.authorization = `Bearer ${token}`
     setData({ token, user })
     return status
   }, [])
 
   const register = useCallback(async (registerData: RegisterCredentials) => {
-    // const { data }: ResponseProps = await api.post('/register', registerData)
+    // const { data }: ResponseProps = await Api.post('/register', registerData)
     console.log(registerData)
     const { data, status } = {
       data: {
@@ -86,8 +86,8 @@ const AuthProvider: React.FC = ({ children }) => {
       name
     }
     localStorage.setItem(`${STORAGE_NAME}:user`, JSON.stringify(user))
-    if (api.defaults.headers?.authorization)
-      api.defaults.headers.authorization = `Bearer ${token}`
+    if (Api.defaults.headers?.authorization)
+      Api.defaults.headers.authorization = `Bearer ${token}`
     setData({ token, user })
     return status
   }, [])

@@ -1,10 +1,8 @@
 import React from 'react'
 import { Dropdown } from 'react-bootstrap'
-import classNames from 'classnames'
-import { useTheme } from 'hooks'
-import styles from './styles.module.scss'
+import styles from './styles.module.css'
 
-export type DropdownMenuProps = {
+export type AvatarMenuProps = {
   label: string
   onClick: (arg?: unknown) => unknown
 }
@@ -12,27 +10,23 @@ export type DropdownMenuProps = {
 export type AvatarProps = {
   name: string
   src: string
-  dropdownMenu: DropdownMenuProps[]
+  avatarMenu: AvatarMenuProps[]
 }
 
-const Avatar: React.FC<AvatarProps> = ({ name, src, dropdownMenu }) => {
-  const { isDark } = useTheme()
+const Avatar: React.FC<AvatarProps> = ({ name, src, avatarMenu }) => {
   return (
     <Dropdown>
-      <Dropdown.Toggle
-        as="button"
-        className={classNames(styles.avatar, { [styles.avatarDark]: isDark })}
-      >
+      <Dropdown.Toggle as="button" className={styles.avatarContainer}>
         <img src={src} alt="Foto de perfil do usuário" />
         <span>{name}</span>
       </Dropdown.Toggle>
-      <Dropdown.Menu className={classNames({ [styles.menuDark]: isDark })}>
-        {dropdownMenu.map(({ label, onClick }, index) => (
+      <Dropdown.Menu>
+        {avatarMenu.map(({ label, onClick }, index) => (
           <Dropdown.Item
             key={`dropdown-item-${index}`}
             as="button"
             onClick={onClick}
-            className={classNames(styles.item, { [styles.itemDark]: isDark })}
+            className={styles.dropdownItem}
           >
             {label}
           </Dropdown.Item>
